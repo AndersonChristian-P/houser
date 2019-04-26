@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import store, { GET_IMG } from "./../../ducks/store"
+import "./WizardStep2.css"
 
 export default class WizardStep2 extends Component {
   constructor() {
@@ -38,7 +39,7 @@ export default class WizardStep2 extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wizard-step-2" >
         <h1>Add New Listing</h1>
 
         <div>Image URL</div>
@@ -48,6 +49,8 @@ export default class WizardStep2 extends Component {
           value={this.state.img}
           type="text"
         />
+
+        <br />
 
         <Link to="/wizard/step1" >
           <button onClick={() => this.addImg()} >Previous Step</button>

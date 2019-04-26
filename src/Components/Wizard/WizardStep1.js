@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import store, { GET_HOUSE_DATA } from "./../../ducks/store"
+import "./WizardStep1.css"
 
 export default class WizardStep1 extends Component {
   constructor() {
@@ -48,7 +49,7 @@ export default class WizardStep1 extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wizard-step-1" >
         <h1>Add New Listing</h1>
 
         <div>Property Name</div>

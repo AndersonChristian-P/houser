@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import axios from "axios"
 import store, { GET_MORT_RENT } from "./../../ducks/store"
 import { Link } from "react-router-dom"
+import "./WizardStep3.css"
 
 export default class WizardStep3 extends Component {
   constructor() {
@@ -50,7 +51,7 @@ export default class WizardStep3 extends Component {
     let recommendedRent = this.state.mortgage * 1.25
 
     return (
-      <div>
+      <div className="wizard-step-3" >
         <h1>Add New Listing</h1>
 
         <div>Recommended Rent: ${recommendedRent}</div>

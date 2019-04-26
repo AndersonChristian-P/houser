@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import store, { CLEAR } from "./../../ducks/store"
 import { Link, Route } from "react-router-dom"
+import "./Wizard.css"
 
 import WizardStep1 from "./WizardStep1"
 import WizardStep2 from "./WizardStep2"
@@ -21,10 +22,10 @@ export default class Wizard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wizard" >
 
         <Link to="/" >
-          <button onClick={() => this.cancelInput()} >Cancel</button>
+          <button className="wizard-cancel-button" onClick={() => this.cancelInput()} >Cancel</button>
         </Link>
 
         <Route path="/wizard/step1" component={WizardStep1} />
