@@ -19,3 +19,6 @@ massive(CONNECTION_STRING).then(db => {
 // --Middleware--
 app.use(express.json())
 
+// --Endpoints--
+app.get("/api/houses", ctrl.retrieve)
+
