@@ -42,7 +42,7 @@ export default class Dashboard extends Component {
     return (
       <div className="dashboard">
         <h1>Dashboard</h1>
-
+        <h2>Home Listings</h2>
         <Link to="/wizard/step1" >
           <button>Add New Property</button>
         </Link>

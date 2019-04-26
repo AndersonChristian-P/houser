@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import "./House.css"
 
 export default class House extends Component {
   constructor(props) {
@@ -21,19 +22,29 @@ export default class House extends Component {
     let { item } = this.props
 
     return (
-      <div>
+      <div className="house">
 
-        <button onClick={this.handleClick} >Delete</button>
+        <span className="delete-button" onClick={this.handleClick} >Delete</span>
 
-        <div>Property Name: {item.name} </div>
-        <div>Address: {item.address} </div>
-        <div>City: {item.city} </div>
-        <div>State: {item.state} </div>
-        <div>Zip: {item.zip}</div>
-        <img src={item.img} width="200" alt="#" />
-        <div>Monthly Mortgage: {item.mortgage}</div>
-        <div>Desired Rent: {item.rent}</div>
-        <br />
+        <div className="hero">
+          <img src={item.img} width="200" alt="#" />
+          <div className="primary-view">
+            <div>Property Name: {item.name} </div>
+            <div>Address: {item.address} </div>
+            <div>City: {item.city} </div>
+            <div>State: {item.state} </div>
+            <div>Zip: {item.zip}</div>
+
+          </div>
+
+          <div className="secondary-view">
+            <div>Monthly Mortgage: {item.mortgage}</div>
+            <div>Desired Rent: {item.rent}</div>
+          </div>
+
+        </div>
+
+        <hr />
       </div>
     )
   }

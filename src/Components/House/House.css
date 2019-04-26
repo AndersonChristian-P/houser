@@ -1,0 +1,16 @@
+.house {
+  background-color: #DEDEDE
+}
+
+.delete-button {
+  margin-left: 90%;
+}
+
+.hero {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: stretch;
+}
