@@ -25,8 +25,8 @@ export default class Dashboard extends Component {
       })
   }
 
-  deleteHouse = (name) => {
-    axios.delete(`/api/house/${name}`)
+  deleteHouse = (id) => {
+    axios.delete(`/api/house/${id}`)
       .then(this.getAllHouses())
   }
 

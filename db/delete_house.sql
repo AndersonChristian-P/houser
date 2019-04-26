@@ -1,2 +1,2 @@
 DELETE FROM houses
-WHERE name = $1;
+WHERE id = $1;

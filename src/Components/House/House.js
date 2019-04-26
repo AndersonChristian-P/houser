@@ -12,13 +12,14 @@ export default class House extends Component {
   }
 
   handleClick() {
-    let name = this.props.item.name
-    this.props.deleteHouse(name)
+    let id = this.props.item.id
+    this.props.deleteHouse(id)
   }
 
   render() {
 
     let { item } = this.props
+    console.log(item)
 
     return (
       <div>
@@ -38,3 +39,4 @@ export default class House extends Component {
 }
 
 
+// this.props.deleteHouse(name)
