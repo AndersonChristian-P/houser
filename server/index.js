@@ -22,3 +22,5 @@ app.use(express.json())
 // --Endpoints--
 app.get("/api/houses", ctrl.retrieve)
 
+app.post("/api/house", ctrl.create)
+

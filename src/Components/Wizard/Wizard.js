@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import axios from "axios";
+import { Link } from "react-router-dom"
 
 export default class Wizard extends Component {
   constructor() {
@@ -9,10 +11,19 @@ export default class Wizard extends Component {
       address: "",
       city: "",
       state: "",
-      zip: 0
+      zip: 0,
+      img: "",
+      mortgage: 0,
+      rent: 0
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.createHouse = this.createHouse.bind(this)
+  }
+
+  createHouse() {
+    const { name, address, city, state, zip, img, mortgage, rent } = this.state
+    axios.post("/api/house", { name, address, city, state, zip, img, mortgage, rent })
   }
 
   handleChange(event) {
@@ -67,8 +78,14 @@ export default class Wizard extends Component {
           type="number"
         />
 
+        <Link to="/" >
+          <button onClick={this.createHouse} >Complete</button>
+        </Link>
 
       </div>
     )
   }
 }
+
+
+// this.props.navigation.navigate('Dashboard')

@@ -1,2 +1,3 @@
 SELECT *
-FROM houses;
+FROM houses
+ORDER BY id;
