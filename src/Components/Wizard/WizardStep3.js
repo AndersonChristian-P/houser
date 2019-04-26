@@ -1,23 +1,34 @@
 import React, { Component } from "react"
 import axios from "axios"
+import store, { GET_MORT_RENT } from "./../../ducks/store"
 import { Link } from "react-router-dom"
 
 export default class WizardStep3 extends Component {
   constructor() {
     super()
 
+    const reduxState = store.getState()
+
     this.state = {
-      name: "",
-      address: "",
-      city: "",
-      state: "",
-      zip: 0,
-      img: "",
-      mortgage: 0,
-      rent: 0
+      mortgage: reduxState.mortgage,
+      rent: reduxState.rent
     }
 
     this.handleChange = this.handleChange.bind(this)
+  }
+
+  componentDidMount() {
+    store.subscribe(() => {
+      const reduxState = store.getState()
+      this.setState({
+        mortgage: reduxState.mortgage,
+        rent: reduxState.rent
+      })
+    })
+  }
+
+  addMortRent() {
+    store.dispatch({ type: GET_MORT_RENT, payload: this.state })
   }
 
   handleChange(event) {
@@ -54,7 +65,7 @@ export default class WizardStep3 extends Component {
         />
 
         <Link to="/wizard/step2" >
-          <button>Previous Step</button>
+          <button onClick={() => this.addMortRent()}>Previous Step</button>
         </Link>
 
         <button onClick={this.createHouse} >Complete</button>
