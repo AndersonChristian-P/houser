@@ -24,7 +24,7 @@ export default class House extends Component {
     return (
       <div className="house">
 
-        <span className="delete-button" onClick={this.handleClick} >Delete</span>
+        <span className="delete-button" onClick={this.handleClick} >X</span>
 
         <div className="hero">
           <img src={item.img} width="200" alt="#" />
