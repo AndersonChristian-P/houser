@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-
+import store, { CLEAR } from "./../../ducks/store"
 import { Link, Route } from "react-router-dom"
 
 import WizardStep1 from "./WizardStep1"
@@ -24,6 +24,9 @@ export default class Wizard extends Component {
     //   this.createHouse = this.createHouse.bind(this)
   }
 
+  cancelInput() {
+    store.dispatch({ type: CLEAR })
+  }
   // createHouse() {
   //   const { name, address, city, state, zip, img, mortgage, rent } = this.state
   //   axios.post("/api/house", { name, address, city, state, zip, img, mortgage, rent })
@@ -42,7 +45,7 @@ export default class Wizard extends Component {
       <div>
 
         <Link to="/" >
-          <button>Cancel</button>
+          <button onClick={() => this.cancelInput()} >Cancel</button>
         </Link>
 
         <Route path="/wizard/step1" component={WizardStep1} />
