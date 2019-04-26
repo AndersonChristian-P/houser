@@ -31,6 +31,8 @@ export default class House extends Component {
         <div>State: {item.state} </div>
         <div>Zip: {item.zip}</div>
         <img src={item.img} width="200" alt="#" />
+        <div>Monthly Mortgage: {item.mortgage}</div>
+        <div>Desired Rent: {item.rent}</div>
         <br />
       </div>
     )
