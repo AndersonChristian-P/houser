@@ -1,23 +1,42 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
+import store, { GET_HOUSE_DATA } from "./../../ducks/store"
 
 export default class WizardStep1 extends Component {
   constructor() {
     super()
 
+    const reduxState = store.getState()
+
     this.state = {
-      name: "",
-      address: "",
-      city: "",
-      state: "",
-      zip: 0,
-      img: "",
-      mortgage: 0,
-      rent: 0
+      name: reduxState.name,
+      address: reduxState.address,
+      city: reduxState.city,
+      state: reduxState.state,
+      zip: reduxState.zip
     }
 
     this.handleChange = this.handleChange.bind(this)
   }
+
+  componentDidMount() {
+    store.subscribe(() => {
+      const reduxState = store.getState()
+      this.setState({
+        name: reduxState.name,
+        address: reduxState.address,
+        city: reduxState.city,
+        state: reduxState.state,
+        zip: reduxState.zip
+      })
+    })
+  }
+
+  addHouseInfo() {
+    store.dispatch({ type: GET_HOUSE_DATA, payload: this.state })
+  }
+
+
 
   handleChange(event) {
     let { name, value } = event.target
@@ -72,7 +91,7 @@ export default class WizardStep1 extends Component {
         />
 
         <Link to="/wizard/step2" >
-          <button>Next Step</button>
+          <button onClick={() => this.addHouseInfo()} >Next Step</button>
         </Link>
 
 
@@ -81,3 +100,8 @@ export default class WizardStep1 extends Component {
   }
 
 }
+
+
+      // img: "",
+      // mortgage: 0,
+      // rent: 0
