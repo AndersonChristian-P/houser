@@ -36,7 +36,6 @@ export default class WizardStep3 extends Component {
     this.setState({
       [name]: value
     })
-    console.log(this.state)
   }
 
   createHouse = () => {
@@ -47,8 +46,13 @@ export default class WizardStep3 extends Component {
   }
 
   render() {
+
+    let recommendedRent = this.state.mortgage * 1.25
+
     return (
       <div>
+
+        <div>Recommended Rent: ${recommendedRent}</div>
 
         <div>Monthly Mortgage Amount</div>
         <input
