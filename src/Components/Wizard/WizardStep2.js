@@ -39,6 +39,7 @@ export default class WizardStep2 extends Component {
   render() {
     return (
       <div>
+        <h1>Add New Listing</h1>
 
         <div>Image URL</div>
         <input

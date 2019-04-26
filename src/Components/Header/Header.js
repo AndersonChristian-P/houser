@@ -3,22 +3,10 @@ import React from "react"
 
 export default function Header() {
   return (
-    <div>Header</div>
+    <div>
+      <header>
+        <h1>Houser</h1>
+      </header>
+    </div>
   )
 }
-
-// export default class Header extends Component {
-//   constructor() {
-//     super()
-
-//     this.state = {
-
-//     }
-//   }
-
-//   render() {
-//     return (
-
-//     )
-//   }
-// }

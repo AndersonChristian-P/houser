@@ -19,7 +19,6 @@ export default class House extends Component {
   render() {
 
     let { item } = this.props
-    console.log(item)
 
     return (
       <div>

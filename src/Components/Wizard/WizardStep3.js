@@ -51,6 +51,7 @@ export default class WizardStep3 extends Component {
 
     return (
       <div>
+        <h1>Add New Listing</h1>
 
         <div>Recommended Rent: ${recommendedRent}</div>
 

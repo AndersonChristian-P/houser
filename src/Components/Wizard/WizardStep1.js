@@ -49,6 +49,7 @@ export default class WizardStep1 extends Component {
   render() {
     return (
       <div>
+        <h1>Add New Listing</h1>
 
         <div>Property Name</div>
         <input
