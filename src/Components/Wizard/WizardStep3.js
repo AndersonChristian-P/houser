@@ -39,8 +39,10 @@ export default class WizardStep3 extends Component {
     console.log(this.state)
   }
 
-  createHouse() {
-    const { name, address, city, state, zip, img, mortgage, rent } = this.state
+  createHouse = () => {
+    const reduxState = store.getState()
+    const { name, address, city, state, zip, img } = reduxState
+    const { mortgage, rent } = this.state
     axios.post("/api/house", { name, address, city, state, zip, img, mortgage, rent })
   }
 
@@ -68,8 +70,9 @@ export default class WizardStep3 extends Component {
           <button onClick={() => this.addMortRent()}>Previous Step</button>
         </Link>
 
-        <button onClick={this.createHouse} >Complete</button>
-
+        <Link to="/">
+          <button onClick={this.createHouse} >Complete</button>
+        </Link>
 
       </div>
     )
