@@ -24,3 +24,5 @@ app.get("/api/houses", ctrl.retrieve)
 
 app.post("/api/house", ctrl.create)
 
+app.delete("/api/house/:name", ctrl.delete)
+

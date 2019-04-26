@@ -7,6 +7,13 @@ export default class House extends Component {
     this.state = {
 
     }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    let name = this.props.item.name
+    this.props.deleteHouse(name)
   }
 
   render() {
@@ -16,7 +23,7 @@ export default class House extends Component {
     return (
       <div>
 
-        <button>Delete</button>
+        <button onClick={this.handleClick} >Delete</button>
 
         <div>Property Name: {item.name} </div>
         <div>Address: {item.address} </div>
@@ -29,3 +36,5 @@ export default class House extends Component {
     )
   }
 }
+
+
