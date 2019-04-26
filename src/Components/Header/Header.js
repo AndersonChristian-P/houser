@@ -1,12 +1,14 @@
 import React from "react"
+import "./Header.css"
 
 
 export default function Header() {
   return (
-    <div>
-      <header>
-        <h1>Houser</h1>
-      </header>
-    </div>
+    <header>
+      <div className="header">
+        <i class="fas fa-home"></i>
+        <span>Houser</span>
+      </div>
+    </header>
   )
 }

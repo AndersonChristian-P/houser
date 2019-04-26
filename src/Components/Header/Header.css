@@ -1,0 +1,19 @@
+header {
+  background-color: #3B5249;
+  font-size: 2em;
+  font-weight: 700;
+  color: white;
+  height: 9vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.header {
+  margin-left: 25vw;
+  padding-top: 1.5vh;
+}
+
+span {
+  margin-left: 1rem;
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import House from "./../House/House"
 import axios from "axios"
 import { Link } from "react-router-dom"
+import "./Dashboard.css"
 
 export default class Dashboard extends Component {
   constructor() {
@@ -39,7 +40,7 @@ export default class Dashboard extends Component {
     })
 
     return (
-      <div>
+      <div className="dashboard">
         <h1>Dashboard</h1>
 
         <Link to="/wizard/step1" >
